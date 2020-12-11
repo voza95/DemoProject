@@ -1,6 +1,7 @@
 package com.demopoject.DemoProject
 
 import org.jetbrains.kotlinx.dl.api.core.Sequential
+import org.jetbrains.kotlinx.dl.api.core.WritingMode
 import org.jetbrains.kotlinx.dl.api.core.layer.Dense
 import org.jetbrains.kotlinx.dl.api.core.layer.Flatten
 import org.jetbrains.kotlinx.dl.api.core.layer.Input
@@ -59,6 +60,8 @@ fun main() {
         ).metrics[Metrics.ACCURACY]
 
         println("Accuracy: $accuracy")
-        this.save(File("src/model/my_model"))
+
+        //https://netron.app/ to view pb file.
+        this.save(File("src/model/my_model"),writingMode = WritingMode.OVERRIDE)
     }
 }
